@@ -1,0 +1,163 @@
+<form style="margin-left: 500px">
+  <h3 style="color: #009acd">Ajouter Employé</h3>
+  <div>
+    <input
+      type="number"
+      id="nom"
+      placeholder="CIN"
+      [(ngModel)]="newEmploye.cin"
+      name="cin"
+      class="form-control"
+    />
+    <label for="nom">CIN</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="prenom"
+      placeholder="NOM"
+      [(ngModel)]="newEmploye.nom"
+      name="nom"
+      class="form-control"
+    />
+    <label for="prenom">NOM</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="mail"
+      placeholder="Prenom"
+      [(ngModel)]="newEmploye.prenom"
+      name="prenom"
+      class="form-control"
+    />
+    <label for="mail">Prenom</label>
+  </div>
+  <div>
+    <input
+      type="date"
+      id="6"
+      placeholder="dateNai"
+      [(ngModel)]="newEmploye.dateNai"
+      name="dateNai"
+      class="form-control"
+    />
+    <label for="6" style="font-size: 16px;">Date Nai</label>
+  </div>
+  <div>
+    <input
+      type="tel"
+      id="7"
+      placeholder="tel"
+      [(ngModel)]="newEmploye.tel"
+      name="tel"
+      class="form-control"
+    />
+    <label for="7">tel</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="8"
+      placeholder="Adresse"
+      [(ngModel)]="newEmploye.adresse"
+      name="adresse"
+      class="form-control"
+    />
+    <label for="8">Adresse</label>
+  </div>
+  <div>
+    <input
+      type="email"
+      id="9"
+      placeholder="Email"
+      [(ngModel)]="newEmploye.email"
+      name="email"
+      class="form-control"
+    />
+    <label for="9">Email</label>
+  </div>
+  <div>
+    <input
+      type="date"
+      id="1"
+      placeholder="dateRecrutement"
+      [(ngModel)]="newEmploye.dateRecrutement"
+      name="dateRecrutement"
+      class="form-control"
+    />
+    <label for="1" style="font-size: 16px;">Date Rec</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="12"
+      placeholder="Contrat"
+      [(ngModel)]="newEmploye.contrat"
+      name="contrat"
+      class="form-control"
+    />
+    <label for="12">Contrat</label>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      id="19"
+      placeholder="Grade"
+      [(ngModel)]="newEmploye.grade"
+      name="grade"
+      class="form-control"
+    />
+    <label for="19">Grade</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      id="18"
+      placeholder="Salaire"
+      [(ngModel)]="newEmploye.salaire"
+      name="salaire"
+      class="form-control"
+    />
+    <label for="18">Salaire</label>
+  </div>
+  <div>
+    <input
+      type="string"
+      id="nom"
+      placeholder="username"
+      [(ngModel)]="newEmploye.username"
+      name="cin"
+      class="form-control"
+    />
+    <label for="nom">username</label>
+  </div>  <div>
+    <input
+      type="password"
+      id="nom"
+      placeholder="Mot de passe"
+      [(ngModel)]="newEmploye.mdp"
+      name="mdp"
+      class="form-control"
+    />
+    <label for="nom" style="font-size: 16px;">Mot de passe</label>
+  </div>
+  <div>
+    <h3 class="text-info">Poste</h3>
+    <select
+      class="form-control form-control-lg"
+      id="idPos"
+      name="idPos"
+      [(ngModel)]="newIdPos"
+    >
+      <option *ngFor="let pos of postes" [value]="pos.idPos">
+        {{ pos.nomPos }}
+      </option>
+    </select>
+  </div>
+
+  <br />
+  <br />
+  <input class="button" type="submit" value="Envoyer" (click)="addEmploye()" />
+</form>

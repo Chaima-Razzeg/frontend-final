@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr><th>Cin</th> <th>Nom</th> <th>Prenom</th><th>Date de Naissance</th> <th>Téléphone</th><th>Adresse</th>
+        <th>Email</th><th>Etat</th> </tr>
+    <tbody *ngFor="let can of candidats" >
+
+        <tr *ngIf="can.etat=='valide'">
+            <td>{{can.cin}}</td>
+            <td>{{can.nom}}</td>
+            <td>{{can.prenom}}</td>
+            <td>{{can.dateNai}}</td>
+            <td>{{can.tel}}</td>
+            <td>{{can.adresse}}</td>
+            <td>{{can.email}}</td>
+            <td>{{can.etat}}</td>
+
+
+
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>

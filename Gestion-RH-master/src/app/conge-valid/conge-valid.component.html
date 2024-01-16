@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr><th>Nom empolyé</th><th>Date Début</th> <th>Date Fin</th> <th>Type Congé</th><th>status</th> </tr>
+    <tbody *ngFor="let con of conges">
+        <tr  *ngIf="con.statusCon=='valide'" >
+            <td>{{ con.employe.username }}</td>
+            <td>{{con.dateDebut}}</td>
+            <td>{{con.dateFin}}</td>
+            <td>{{con.typeCon}}</td>
+            <td>{{con.statusCon}}</td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>

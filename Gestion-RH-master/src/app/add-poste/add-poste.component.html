@@ -1,0 +1,45 @@
+<div style="height:120px ;"></div>
+
+<form style="margin-left: 500px">
+  <h3 style="color: #009acd">Ajouter Poste</h3>
+  <div>
+    <input
+      type="text"
+      id="mail"
+      placeholder="Nom"
+      [(ngModel)]="newPoste.nomPos"
+      name="nomPos"
+      class="form-control"
+    />
+    <label for="mail" style="font-size: 12px; font-weight: 600;">Nom</label>
+  </div>
+  <br>
+  <div>
+    <input
+      type="text"
+      id="6"
+      placeholder="Description"
+      [(ngModel)]="newPoste.descriptionPos"
+      name="descriptionPos"
+      class="form-control"
+    />
+    <label for="6" style="font-size: 12px; font-weight: 600;">Description</label>
+  </div>
+<br>
+  <div >
+    <p class="text-info" style="font-size: 20px;" >Departement</p >
+    <select
+      class="form-control form-control-lg"
+      id="idDep"
+      name="idDep"
+      [(ngModel)]="newIdDep"
+    >
+      <option *ngFor="let dep of departements" [value]="dep.idDep">
+        {{ dep.nomDep }}
+      </option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <input class="button" (click)="addPoste()" type="submit" value="Envoyer" />
+</form>

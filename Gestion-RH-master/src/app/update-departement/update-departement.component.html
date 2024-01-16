@@ -1,0 +1,18 @@
+
+<div style="height:120px ;"></div>
+<form style="margin-left: 500px;">
+  <h3 style="color: #009acd;">Modifier Department</h3>
+
+<div>
+  <input type="text" id="mail" placeholder="Nom"  [(ngModel)]="currentDepartement.nomDep" name="nomDep" class="form-control"/>
+       <label  style="font-size: 12px; font-weight: 600;" for="mail">Nom</label>
+</div>
+<br>
+<div>
+ <input  type="text" id="6" placeholder="Description" [(ngModel)]="currentDepartement.descriptionDep" name="descriptionDep" class="form-control"/>
+       <label style="font-size: 12px; font-weight: 600;" for="6">Description</label>
+</div>
+ <br>
+<input class="button" type="submit" value="Envoyer" (click)="updateDepartement()"/>
+</form>
+

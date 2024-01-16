@@ -1,0 +1,84 @@
+<!-- <div class="container">
+    <div>
+        <h2>Modifier un Poste :</h2>
+    </div>
+    <form> -->
+<!--         <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label>ID Poste</label>
+            <input type="text" [(ngModel)]="currentPoste.idPos" name="idPos" class="form-control">
+        </div> -->
+        <!-- <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom </label>
+            <input type="text" [(ngModel)]="currentPoste.nomPos" name="nomPos" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Description </label>
+            <input type="text" [(ngModel)]="currentPoste.descriptionPos" name="descriptionPos" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Compétances Requises</label>
+            <input type="text" [(ngModel)]="currentPoste.competancesRequises" name="competancesRequises" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label >Departement</label>
+        <select class="form-control form-control-lg" id="idDep" name="idDep"
+        [(ngModel)]="updatedDepId">
+        <option *ngFor="let dep of departements" [value]="dep.idDep" >
+        {{dep.nomDep}}
+        </option>
+        </select>
+
+            </div>
+
+        <div class="mt-2">
+            <button type="submit" class="btn btn-success" (click)="updatePoste()">Ajouter</button>
+        </div>
+    </form>
+</div> -->
+<div style="height:100px ;"></div>
+
+
+<form style="margin-left: 500px">
+  <h3 style="color: #009acd">Modifier un Poste</h3>
+
+  <div>
+    <input
+      type="text"
+      id="mail"
+      placeholder="Nom"
+      [(ngModel)]="currentPoste.nomPos"
+      name="nomPos"
+      class="form-control"
+    />
+    <label for="mail"style="font-size: 13px; font-weight: 600;">Nom Poste</label>
+  </div>
+  <br>
+  <div>
+    <input
+      type="text"
+      id="6"
+      placeholder="Description"
+      [(ngModel)]="currentPoste.descriptionPos"
+      name="descriptionDep"
+      class="form-control"
+    />
+    <label for="6"style="font-size: 13px; font-weight: 600;">Description</label>
+  </div>
+<br>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <p class="text-info" style="font-size: 20px;" >Departement</p >
+    <select
+      class="form-control form-control-lg"
+      id="idDep"
+      name="idDep"
+      [(ngModel)]="updatedDepId"
+    >
+      <option *ngFor="let dep of departements" [value]="dep.idDep">
+        {{ dep.nomDep }}
+      </option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <input class="button" type="submit" value="Envoyer" (click)="updatePoste()" />
+</form>

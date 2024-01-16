@@ -1,0 +1,25 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Entrer le cin de l'employe:  </label>
+        <input type="number" class="form-control" [(ngModel)]="cin" name="cin" class="form-control">
+        <button type="submit" (click)="rechercherEmp()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+        </div>
+        </form>
+        
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th> Code</th> <th>Depart</th></tr>
+    <tbody *ngFor="let emp of employes">
+        <tr >
+            <td>{{emp.cin}}</td>
+            <td>{{emp.nom}}</td>
+            <td>{{emp.prenom}}</td>
+
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>

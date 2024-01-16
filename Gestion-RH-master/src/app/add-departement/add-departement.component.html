@@ -1,0 +1,18 @@
+
+<div style="height:120px ;"></div>
+
+<form style="margin-left: 500px;">
+  <h3 style="color: #009acd;">Ajouter Department</h3>
+
+<div>
+  <input type="text" id="mail" placeholder="Nom"  [(ngModel)]="newDepartement.nomDep" name="nomDep" class="form-control"/>
+       <label for="mail"style="font-size: 12px; font-weight: 600;">Nom</label>
+</div>
+<br>
+<div>
+ <input type="text" id="6" placeholder="Description" [(ngModel)]="newDepartement.descriptionDep" name="descriptionDep" class="form-control"/>
+       <label for="6" style="font-size: 12px; font-weight: 600;">Description</label>
+</div>
+ <br>
+<input class="button" type="submit" value="Envoyer" (click)="addDepartement()"/>
+</form>

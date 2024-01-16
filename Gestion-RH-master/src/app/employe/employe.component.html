@@ -1,0 +1,71 @@
+<div class="" style="margin-left: 20%;width: 75%;">
+  <div class="card shadow mb-4">
+    <div class="card-body" >
+      <div>
+        <a routerLink="/add-employe"
+          ><img src="https://img.icons8.com/color-glass/32/null/add.png" />
+        </a>
+      </div>
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2">
+          <label>Entrer le cin de l'employe:</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cin"
+            name="cin"
+            class="form-control"
+          />
+          <div type="submit" (click)="rechercherEmp()">
+            <img src="https://img.icons8.com/avantgarde/48/null/search.png" />
+          </div>
+        </div>
+      </form>
+      <table  class="table table-striped" style="font-size: 12px;">
+        <tr>
+          <th>Cin</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Date de Naissance</th>
+          <th>Téléphone</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Salaire</th>
+          <th>Contrat</th>
+          <th>Grade</th>
+          <th>Poste</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+        <tbody *ngFor="let emp of employes">
+          <tr>
+            <td>{{ emp.cin }}</td>
+            <td>{{ emp.nom }}</td>
+            <td>{{ emp.prenom }}</td>
+            <td>{{ emp.dateNai }}</td>
+            <td>{{ emp.tel }}</td>
+            <td>{{ emp.adresse }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.salaire }}</td>
+            <td>{{ emp.contrat }}</td>
+            <td>{{ emp.grade }}</td>
+            <td>{{ emp.poste.nomPos }}</td>
+
+            <td>
+              <a [routerLink]="['/updateemploye', emp.id]"
+                ><img
+                  src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/null/external-edit-user-interface-anggara-flat-anggara-putra-5.png"
+              /></a>
+            </td>
+            <td>
+              <a (click)="deletemp(emp.id)"
+                ><img
+                  src="https://img.icons8.com/avantgarde/37/null/delete-forever.png"
+              /></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

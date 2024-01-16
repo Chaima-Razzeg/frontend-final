@@ -1,0 +1,97 @@
+
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div id="wrapper" class="wrapper-content">
+  <div
+    *ngIf="authService.isNotAuthentificated()"
+    id="sidebar-wrapper"
+    style="background-color: #009acd"
+  >
+    <br />
+    <ul class="sidebar-nav">
+      <br />
+      <li>
+        <a routerLink="home">
+          <img
+            src="assets/ct.png"
+            height="40"
+            width="38"
+            alt="L-mobile"
+            title=""
+          />
+          Gestion RH
+        </a>
+      </li>
+      <br />
+      <li class="text-light">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2UlEQVR4nO2Z7W4bRRSGLSH4heAKEFwBQsrdICEkuAPEh7gBJLgDfhQCiVTJ/KBN3JA0KG1JqChEKRGBNnHk2MVJaq+/krX3wzOzBz2zXmzapMSOkzjgI428mjn7vufMnDkze5xKjWUsYxnLf0LSC42JK9+WP8s+8n9o+SpfrgbN4mNP05xa2KSPsS+uVT5NLzgTqVGQ9Ia8MDlb+Vhrk93KN2V5tSqzt0py405Z5lcqcvPHuPFMH2PooKuU2Zq8Xv3o89XV5y/E+Km5yjuer0urGw2ZWSrJ4t2KLK815OffDmXtQVN+fdiU9c248UwfY+igyzurGw3xAr0/NVt7+9wMTy/WXl6537z5+7ZrjVi6V7WGYegfOU+yhUByxVDye6EU9tu28UwfY+igyztL96oWA6zlNXd+aq7y0pkaf/W7+mtKmTxhQGj8tH4g61st2SoE1shiScmeo6RU1VKuaXHqceOZPsbQQZd31rdaFgMsMJUyuelM7dUzM57lXrzr2JkjJB7kPGvMbllZI6sHRuqHRhqukcNWJAdNYxvP9DGGDrq8k98LLQZYYIINx9CdIGyYeQhu/1K3MU04/FmKZxujMND1Imn5Il5Ai8QPxTae6WMMHXR5p1TVFgMsMMGGg5VI3yq9ODQHiHmWmFmCaPtRIMVS24ZHvWN4bHAkQVskbEcSKpF2p/FMH2PooMs7dddYDLDABBsOuFbuu3NDMZ4MwSYjTllqZgvCSiOe9aYfz3QQRh2DI1E6Em1EtO40I7aPMXTQ5Z2mH68GWGCCDQdccH6dqbx76jxPqiRTsNmIV5acWYOYkAjCZKY7RneaiUQMv53n3rGuI2IxwAITbDjggtPz1f6pzgkOKXI1y0rGYNMRtyw9s4cBhIeyMx11jY5Eoida7xi6vBN2nAALTLDhgAtOuL+aqX4wsANKmSwzQc4m7ZE52HzELyHQTow3xxt+nCNxWInFAAtMsOGAC064tZbNge82HPmcmhw8zAzpj+VmE8YxH8Uz/4Txx8lTTugYAywwwYbDrsJmzL2540bphfobfTvAxYxswNHP6ckB1J39OIb/jvUTGH+kE1GyJ+LslKwCXHDCjQ1Xrjmf9O0AN0cuXywl2YFTlIPIbtx2d9Mykyc1/iknTHdTgwk2HHDBCTc2ZAvB7b4d8ANd4AZJWuMewwaLwyfO6UmqTGb/SEM77TgnTGcFwAITbDjgghNubGh5aqdvB7jDcw3mcEninysBsUr26DX+KAes8cn4v4SSNnFGAhuOZB/AjQ1OLXT7doAPEQ4UNhM3SvI095ok+3BAHRc+ifH/MPZZYaS72QgOuOCEGxuKjz31/3PAuewh5F/2TZwt+HdGJ436/adRqgeX+iBLLzgTHOOjcJX45vva66lBhHLJRV/mlDYPU4MKdZsRuE6/N7ADfEzwkX2BHzS7py58Tc1WLuyTcvpG7c3UMISi03l/1C+vuZnUsISKGaWOcyuraLM91LIKQrHpXApbvtq/Ol99ZajG9zqhtMmdWWlRm+0zKy32hhNFpzMo7maGHjbPkulM7S2W+9TldV/tDi3b9Cvk6C+vOx9S+uDIP+kfHOhywk7OOO+n0/JcahSE0geXLj7AvUDv8D2R/MVUrgUuV2LG0Bn4bjOWsYxlLKlRk78Ak4u0EfuVShsAAAAASUVORK5CYII=" width="15" height="15">        {{ authService.loggedUser }}
+      </li>
+      <li>
+        <a *ngIf="authService.isAdmin()" class="" routerLink="dashboard"
+          >Statistique</a
+        >
+      </li>
+      <li>
+        <a class="" *ngIf="authService.isAdmin()" routerLink="employes">Employes</a>
+      </li>
+      <li>
+        <a class=""  *ngIf="authService.isAdmin()"routerLink="departements">Départements</a>
+      </li>
+      <li>
+        <a class="" *ngIf="authService.isAdmin()" routerLink="postes">Postes</a>
+      </li>
+      <div class="dropdown" *ngIf="authService.isAdmin()">
+        <button class="dropbtn">Congés</button>
+        <div class="dropdown-content">
+          <a routerLink="congeAttente" style="background-color: #009acd"
+            >Congés en attentes</a
+          >
+          <a routerLink="congeValide" style="background-color: #009acd"
+            >Congé validés</a
+          >
+        </div>
+      </div>
+
+      <div class="dropdown" *ngIf="authService.isAdmin()">
+        <button class="dropbtn">Recrutement</button>
+        <div class="dropdown-content">
+          <a routerLink="candEnAttente" style="background-color: #009acd"
+            >Candidats en attente</a
+          >
+          <a routerLink="candValide" style="background-color: #009acd"
+            >Candidats validés</a
+          >
+        </div>
+      </div>
+      <li>
+        <a *ngIf="authService.isUser()" routerLink="profil"
+          >Mon Profil</a
+        >
+      </li>
+      <li>
+        <a *ngIf="authService.isUser()" routerLink="demandeConge"
+          >Demander Congé</a
+        >
+      </li>
+      <li>
+        <a *ngIf="authService.isUser()" routerLink="MesCongés">Mes Congés</a>
+      </li>
+      <br />
+      <br />
+      <li>
+        <a *ngIf="authService.isloggedIn" (click)="onLogout()">
+          <img
+            src="assets/Logout.png"
+            height="48"
+            width="48"
+            alt="L-mobile"
+            title=""
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

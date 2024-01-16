@@ -1,0 +1,25 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Poste en tapant</label>
+        <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+        </div>
+        </form>
+        
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom</th> <th>description</th>  </tr>
+    </thead>
+    <tbody *ngFor="let pos of postes">
+        <tr>
+            <td>{{pos.idPos}}</td>
+            <td>{{pos.nomPos}}</td>
+            <td>{{pos.descriptionPos}}</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>

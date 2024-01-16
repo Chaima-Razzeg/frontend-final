@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div>
+        <a routerLink="/add-poste"
+          ><img src="https://img.icons8.com/color-glass/32/null/add.png" />
+        </a>
+      </div>
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2">
+          <label>Nom Poste en tapant :</label>
+          <input
+            class="form-control"
+            #searchTerm
+            (keyup)="onKeyUp(searchTerm.value)"
+          />
+          <img src="https://img.icons8.com/avantgarde/48/null/search.png" />
+        </div>
+      </form>
+      <table class="table table-striped">
+        <tr>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>departement</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+        <tbody *ngFor="let pos of postes">
+          <tr>
+            <td>{{ pos.nomPos }}</td>
+            <td>{{ pos.descriptionPos }}</td>
+            <td>{{ pos.departement.nomDep }}</td>
+
+            <td>
+              <a [routerLink]="['/updateposte', pos.idPos]"
+                ><img
+                  src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/null/external-edit-user-interface-anggara-flat-anggara-putra-5.png"
+              /></a>
+            </td>
+            <td>
+              <a (click)="deletepos(pos.idPos)"
+                ><img
+                  src="https://img.icons8.com/avantgarde/37/null/delete-forever.png"
+              /></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

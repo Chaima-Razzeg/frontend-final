@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr><th>Cin</th> <th>Nom</th> <th>Prenom</th><th>Date de Naissance</th> <th>Téléphone</th><th>Adresse</th>
+        <th>Email</th> <th>etat</th><th>Accepter</th><th>Refuser</th> </tr>
+    <tbody *ngFor="let can of candidats">
+        <tr *ngIf="can.etat=='en attente'" >
+            <td>{{can.cin}}</td>
+            <td>{{can.nom}}</td>
+            <td>{{can.prenom}}</td>
+            <td>{{can.dateNai}}</td>
+            <td>{{can.tel}}</td>
+            <td>{{can.adresse}}</td>
+            <td>{{can.email}}</td>
+            <td>{{can.etat}}</td>
+
+
+
+            <td><a  (click)="modif(can.id)"><img src="https://img.icons8.com/fluency/38/null/checked.png"></a></td>
+            <td><a  (click)="deletcan(can.id)"><img src="https://img.icons8.com/fluency/38/null/cancel-2.png"></a></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>
